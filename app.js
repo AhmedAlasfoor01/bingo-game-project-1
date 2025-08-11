@@ -1,5 +1,3 @@
-# bingo-game-project-1
-
 
 //As a user, I want to see the bingo card clearly.
 
