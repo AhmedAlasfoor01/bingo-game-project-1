@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bingo Game</title>
+    <script defer src="./js/app.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Bingo Card</title>
 </head>
 <body>
-    
+    <div class="bingo-game">
+        <h1>Bingo Game</h1>
+        <p>
+            Instructions:<br>
+            - You got 15 secs to select the numbers<br>
+            -you should select the right number that will appear ,So you will "WIN"
+        </p>
+        
+        <!-- Game Controls -->
+        <div class="controls">
+            <button onclick="initializeGame()" id="generateBtn">New Game</button>
+            <button onclick="callNumber()" id="callBtn">Call Number</button>
+            <button onclick="resetGame()" id="resetBtn">Reset Game</button>
+        </div>
+        
+        <!-- Current Called Number Display -->
+        <div id="current-called">Press "Call Number" to start</div>
+        
+        <!-- Bingo Card -->
+        <div class="bingo-card">
+            <div class="card-title">B I N G O</div>
+            
+            <div id="bingo-box">
+                <div class="bingo-square box1" onclick="toggleSelection(this)"></div>
+                <div class="bingo-square box2" onclick="toggleSelection(this)"></div>
+                <div class="bingo-square box3" onclick="toggleSelection(this)"></div>
+                <div class="bingo-square box4" onclick="toggleSelection(this)"></div>
+                <div class="bingo-square box5" onclick="toggleSelection(this)"></div>
+                <div class="bingo-square box6" onclick="toggleSelection(this)"></div>
+                <div class="bingo-square box7" onclick="toggleSelection(this)"></div>
+                <div class="bingo-square box8" onclick="toggleSelection(this)"></div>
+                <div class="bingo-square box9" onclick="toggleSelection(this)"></div>
+            </div>
+        </div>
+        
+        <!-- Called Numbers History -->
+        <div class="controls">
+            <h4>Called Numbers:</h4>
+            <div id="called-numbers">None yet</div>
+        </div>
+    </div>
+
+    <script>
+        // Add the toggle selection function for clicking squares
+        function toggleSelection(square) {
+            square.classList.toggle('selected');
+        }
+        
+        // Add reset game function
+        function resetGame() {
+            // Reset all game variables
+            numberPool = [];
+            playerCard = [];
+            markedSquares = [];
+            calledNumbers = [];
+            gameActive = false;
+            
+            // Clear all selections
+            const squares = document.querySelectorAll('.bingo-square');
+            squares.forEach(square => {
+                square.classList.remove('selected', 'marked');
+                square.innerText = '';
+            });
+            
+            // Reset displays
+            document.getElementById('current-called').textContent = 'Press "New Game" to start';
+            document.getElementById('called-numbers').textContent = 'None yet';
+        }
+    </script>
 </body>
 </html>
+

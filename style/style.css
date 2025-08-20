@@ -1,0 +1,114 @@
+/* Main game background */
+.bingo-game {
+    background-color: aquamarine;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Card title styling */
+.card-title {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/* Bingo card container */
+#bingo-box {
+    background-color: rgba(237, 226, 226, 0.499);
+    padding: 20px;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.99);
+    gap: 2px;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+}
+
+/* Individual bingo squares - using both your original classes and the JS expected class */
+.bingo-square,
+.box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9 {
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for squares */
+.bingo-square:hover,
+.box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, 
+.box6:hover, .box7:hover, .box8:hover, .box9:hover {
+    background-color: #f0f0f0;
+}
+
+/* Selected/marked squares */
+.bingo-square.selected,
+.bingo-square.marked {
+    background-color: #90EE90;
+    color: #333;
+}
+
+/* Bingo card text styling */
+.bingo-card {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Game controls */
+.controls {
+    color: azure;
+    text-align: center;
+    margin: 20px;
+}
+
+.controls button {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: azure;
+    border: 2px solid azure;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Called number display */
+#current-called {
+    font-size: 36px;
+    font-weight: bold;
+    color: azure;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Called numbers history */
+#called-numbers {
+    color: azure;
+    text-align: center;
+    margin: 10px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+}
