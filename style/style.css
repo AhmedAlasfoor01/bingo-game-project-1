@@ -1,11 +1,11 @@
-/* Main game background */
+
 .bingo-game {
     background-color: aquamarine;
     padding: 20px;
     min-height: 100vh;
 }
 
-/* Card title styling */
+
 .card-title {
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -13,7 +13,7 @@
     margin-bottom: 20px;
 }
 
-/* Bingo card container */
+
 #bingo-box {
     background-color: rgba(237, 226, 226, 0.499);
     padding: 20px;
@@ -27,7 +27,6 @@
     display: grid;
 }
 
-/* Individual bingo squares - using both your original classes and the JS expected class */
 .bingo-square,
 .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9 {
     padding: 5px;
@@ -44,21 +43,20 @@
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect for squares */
+
 .bingo-square:hover,
 .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover, 
 .box6:hover, .box7:hover, .box8:hover, .box9:hover {
     background-color: #f0f0f0;
 }
 
-/* Selected/marked squares */
+
 .bingo-square.selected,
 .bingo-square.marked {
     background-color: #90EE90;
     color: #333;
 }
 
-/* Bingo card text styling */
 .bingo-card {
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
@@ -90,7 +88,6 @@
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Called number display */
 #current-called {
     font-size: 36px;
     font-weight: bold;
@@ -102,7 +99,7 @@
     border-radius: 10px;
 }
 
-/* Called numbers history */
+
 #called-numbers {
     color: azure;
     text-align: center;
@@ -112,3 +109,56 @@
     padding: 10px;
     border-radius: 5px;
 }
+
+.timer-section {
+                text-align: center;
+                margin: 20px 0;
+            }
+            
+            #timer {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                background: #f0f0f0;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                min-width: 200px;
+            }
+            
+            #timer.warning {
+                color: #ff4444;
+                background: #ffe6e6;
+            }
+            
+            #current-called {
+                font-size: 20px;
+                text-align: center;
+                margin: 15px 0;
+                font-weight: bold;
+            }
+            
+            .controls {
+                text-align: center;
+                margin: 15px 0;
+            }
+            
+            .controls button {
+                margin: 5px 10px;
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                background: #4CAF50;
+                color: white;
+            }
+            
+            .controls button:hover {
+                background: #45a049;
+            }
+            
+            .controls button:disabled {
+                background: #cccccc;
+                cursor: not-allowed;
+            }

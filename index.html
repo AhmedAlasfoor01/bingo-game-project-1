@@ -13,18 +13,23 @@
         <p>
             Instructions:<br>
             - You got 15 secs to select the numbers<br>
-            -you should select the right number that will appear ,So you will "WIN"
+            - You should select the right number that will appear, So you will "WIN"
         </p>
         
-        <!-- Game Controls -->
+        <!-- Timer Display -->
+        <div class="timer-section">
+            <div id="timer">Press "Start New Game" to begin</div>
+        </div>
+        
+        <!-- Game controls -->
         <div class="controls">
-            <button onclick="initializeGame()" id="generateBtn">New Game</button>
+            <button onclick="startNewGame()" id="startBtn">Start New Game</button>
             <button onclick="callNumber()" id="callBtn">Call Number</button>
             <button onclick="resetGame()" id="resetBtn">Reset Game</button>
         </div>
         
-        <!-- Current Called Number Display -->
-        <div id="current-called">Press "Call Number" to start</div>
+        <!-- Current called number display -->
+        <div id="current-called">Press "Start New Game" to begin</div>
         
         <!-- Bingo Card -->
         <div class="bingo-card">
@@ -51,19 +56,43 @@
     </div>
 
     <script>
-        // Add the toggle selection function for clicking squares
+        // Toggle selection function for clicking squares
         function toggleSelection(square) {
-            square.classList.toggle('selected');
+            
+            if (!gameActive) {
+                alert('Please start a new game first!');
+                return;
+            }
+            
+            const number = parseInt(square.innerText);
+            
+            
+            if (calledNumbers.includes(number)) {
+                square.classList.toggle('selected');
+                
+                // Check for win condition 
+                if (square.classList.contains('selected')) {
+                    
+                }
+            } else {
+                alert('This number hasn\'t been called yet!');
+            }
         }
         
-        // Add reset game function
+        // Reset game function
         function resetGame() {
+            
+            if (gameTimer) {
+                clearInterval(gameTimer);
+            }
+            
             // Reset all game variables
             numberPool = [];
             playerCard = [];
             markedSquares = [];
             calledNumbers = [];
             gameActive = false;
+            timeLeft = 15;
             
             // Clear all selections
             const squares = document.querySelectorAll('.bingo-square');
@@ -73,10 +102,12 @@
             });
             
             // Reset displays
-            document.getElementById('current-called').textContent = 'Press "New Game" to start';
+            document.getElementById('current-called').textContent = 'Press "Start New Game" to begin';
             document.getElementById('called-numbers').textContent = 'None yet';
+            document.getElementById('timer').textContent = 'Press "Start New Game" to begin';
         }
+        
+        
     </script>
 </body>
 </html>
-
