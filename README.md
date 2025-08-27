@@ -33,5 +33,6 @@
 
 
 //the user should get the four corners to win (I need to add else if statement for checking and i need to add a function that if else will be inside the function I should call it checkFor win)
-
+//screenshot
+https://github.com/AhmedAlasfoor01/bingo-game-project-1/blob/e95aad829a863e45bb6d78a95218db7fecd8c1e8/bingo%20screenshot%20.png
 
