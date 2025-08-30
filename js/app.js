@@ -86,12 +86,12 @@ function shuffleArray(array) {
 
 function callNumber() { 
     if (!gameActive) {
-        alert('Game is not active! Please start a new game.');
+       document.getElementById(message).innerText='Game is not active! Please start a new game.';
         return;
     }
     
     if (numberPool.length === 0) {
-        alert('All numbers have been called!');
+        document.getElementById(message).innerText='All numbers have been called!';
         endGame();
         return;
     }
@@ -156,7 +156,7 @@ function endGame() {
     });
     
     setTimeout(() => {
-        alert(`Game Over!\nYou correctly selected ${correctSelections.length} called numbers: ${correctSelections.join(', ')}`);
+        document.getElementById(message).innerText=`Game Over!\nYou correctly selected ${correctSelections.length} called numbers: ${correctSelections.join(', ')}`;
     }, 500);
 }
 
